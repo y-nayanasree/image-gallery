@@ -1,0 +1,141 @@
+```css
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    padding: 45px 20px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #f8fafc;
+    background:
+        radial-gradient(circle at top left, #40206c, transparent 35%),
+        radial-gradient(circle at bottom right, #075e65, transparent 35%),
+        linear-gradient(135deg, #080b18, #15112b, #07141a);
+}
+
+.gallery-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 35px;
+    text-align: center;
+    background: rgba(15, 18, 40, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 28px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+}
+
+.tagline {
+    color: #5eead4;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin-bottom: 12px;
+}
+
+h1 {
+    font-size: clamp(30px, 5vw, 46px);
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #a5aec4;
+    margin-bottom: 32px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.gallery img {
+    display: block;
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.gallery img:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 12px 28px rgba(94, 234, 212, 0.18);
+}
+
+.footer {
+    color: #7d8aa5;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-top: 28px;
+}
+
+.lightbox[hidden] {
+    display: none;
+}
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 55px 20px 20px;
+    background: rgba(2, 4, 15, 0.92);
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 16px;
+    box-shadow: 0 0 35px rgba(139, 92, 246, 0.25);
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background: #8b5cf6;
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    background: #06b6d4;
+}
+
+@media (max-width: 800px) {
+    .gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .gallery img {
+        height: 190px;
+    }
+
+    .gallery-container {
+        padding: 25px 18px;
+    }
+}
+
+@media (max-width: 420px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery img {
+        height: 230px;
+    }
+}
+```
